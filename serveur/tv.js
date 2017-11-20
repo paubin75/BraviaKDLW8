@@ -7,6 +7,7 @@ const networkRemote = new BraviaRemoteControl('externaldomain.com', 44444, '0000
 
 router.get('/:action', function(req, res, next) {
     remote.sendAction(req.params.action);
+    res.redirect('/');
 });
 
 
@@ -55,6 +56,7 @@ router.get('/chaine/:nom', function(req, res, next) {
           }, 500);
         break;
     };
+    res.redirect('/');
 });
 
 module.exports = router;
